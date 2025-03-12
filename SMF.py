@@ -1,15 +1,14 @@
+import os
 from flask import Flask, request
 from twilio.rest import Client
 from twilio.twiml.messaging_response import MessagingResponse
-import os
 
 app = Flask(__name__)
 
-# Read Twilio credentials and phone numbers from environment variables
-account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
-auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
-TWILIO_NUMBER = os.environ.get('+61489088639')
-FORWARD_TO = os.environ.get('+61422260365')  # Your personal number
+ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+TWILIO_NUMBER = os.environ.get("TWILIO_NUMBER")
+FORWARD_TO = os.environ.get("FORWARD_TO")
 
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 

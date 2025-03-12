@@ -24,10 +24,7 @@ def forward_sms():
         to=FORWARD_TO
     )
 
-    # Optional auto-reply to sender
-    resp = MessagingResponse()
-    resp.message("Thanks for messaging us. We'll get back to you shortly.")
-    return str(resp)
+    return ("", 204)  # No auto-reply
 
 @app.route("/", methods=["GET"])
 def home():
